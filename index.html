@@ -6,12 +6,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #FFD700;
-      --secondary: #FF4500;
-      --accent: #00BFFF;
-      --bg: #FFF8F0;
-      --card-bg: #FFFFFF;
+      --red: #FF4D4D;
+      --orange: #FF8C42;
+      --yellow: #FFD93D;
+      --green: #6BCB77;
+      --blue: #4D96FF;
+      --purple: #9D4EDD;
       --text: #111;
+      --bg: #FFF8F0;
     }
     body {
       margin: 0;
@@ -21,13 +23,14 @@
     }
     header {
       padding: 20px 40px;
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 2px solid var(--red);
       position: sticky;
       top: 0;
       background: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 100;
     }
     nav a {
       margin-left: 20px;
@@ -36,15 +39,15 @@
       color: var(--text);
       transition: color 0.3s;
     }
-    nav a:hover { color: var(--secondary); }
+    nav a:hover { color: var(--orange); }
     .hero {
       padding: 100px 20px;
       text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
+      background: linear-gradient(135deg, var(--yellow), var(--orange));
+      color: #fff;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.5rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px var(--red); }
+    .hero p { font-size: 1.5rem; text-shadow: 1px 1px var(--red); }
     .section {
       max-width: 1200px;
       margin: auto;
@@ -57,10 +60,36 @@
     }
     .card {
       border-radius: 20px;
-      padding: 30px;
-      background: var(--card-bg);
+      padding: 20px;
+      background: white;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+      font-weight: 600;
+      background-size: cover;
+      background-position: center;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    .card h3, .card p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      padding: 0 10px;
     }
     .card:hover {
       transform: translateY(-6px);
@@ -69,21 +98,18 @@
     footer {
       text-align: center;
       padding: 40px;
-      border-top: 2px solid var(--primary);
       font-size: 14px;
       color: #555;
       background: var(--bg);
-    }
-    .map {
-      width: 100%;
-      height: 250px;
-      border-radius: 20px;
-      margin-top: 20px;
-      background: var(--accent);
+      border-top: 2px solid var(--red);
     }
     h2 {
-      color: var(--secondary);
       margin-bottom: 20px;
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow), var(--green), var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
@@ -102,35 +128,32 @@
 </section><section id="destinations" class="section">
   <h2>Destinations</h2>
   <div class="grid">
-    <div class="card">
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1551918120-97338f1275f1?auto=format&fit=crop&w=800&q=80');">
       <h3>Thailand</h3>
       <p>Rooftop views, night markets, real chaos.</p>
-      <div class="map"></div>
     </div>
-    <div class="card">
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1505245208761-ba872912fac0?auto=format&fit=crop&w=800&q=80');">
       <h3>Italy</h3>
       <p>Trattorias, ruins, and slow travel done right.</p>
-      <div class="map"></div>
     </div>
-    <div class="card">
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1558190436-2c5a14ec8f27?auto=format&fit=crop&w=800&q=80');">
       <h3>Japan</h3>
       <p>Precision, street food, and quiet luxury.</p>
-      <div class="map"></div>
     </div>
   </div>
 </section><section id="food" class="section">
   <h2>Food Trails</h2>
   <div class="grid">
-    <div class="card">🍜 Fly For It</div>
-    <div class="card">🍕 Worth the Queue</div>
-    <div class="card">❌ Skip It</div>
+    <div class="card" style="background: var(--red);">🍜 Fly For It</div>
+    <div class="card" style="background: var(--orange);">🍕 Worth the Queue</div>
+    <div class="card" style="background: var(--yellow); color:#111;">❌ Skip It</div>
   </div>
 </section><section id="blog" class="section">
   <h2>Travel Stories & Guides</h2>
   <div class="grid">
-    <div class="card">48 Hours in Bangkok</div>
-    <div class="card">Rome: Tourist Traps to Avoid</div>
-    <div class="card">Japan on a Smart Budget</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');">48 Hours in Bangkok</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1533680051473-2d734e8c1a27?auto=format&fit=crop&w=800&q=80');">Rome: Tourist Traps to Avoid</div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800&q=80');">Japan on a Smart Budget</div>
   </div>
 </section><section id="about" class="section">
   <h2>About</h2>
