@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bites, Sights & Flights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #111;
+    }
+    header {
+      padding: 24px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      background: white;
+    }
+    nav a {
+      margin-right: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #111;
+    }
+    .hero {
+      padding: 80px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff7ed, #fff);
+    }
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 24px;
+      background: white;
+    }
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#food">Food</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <h1>Bites, Sights & Flights</h1>
+  <p>Luxury when it matters. Real adventure always.</p>
+</section>
+
+<section id="destinations" class="section">
+  <h2>Destinations</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Thailand</h3>
+      <p>Rooftop views, night markets, real chaos.</p>
+    </div>
+    <div class="card">
+      <h3>Italy</h3>
+      <p>Trattorias, ruins, and slow travel done right.</p>
+    </div>
+    <div class="card">
+      <h3>Japan</h3>
+      <p>Precision, street food, and quiet luxury.</p>
+    </div>
+  </div>
+</section>
+
+<section id="food" class="section">
+  <h2>Food Trails</h2>
+  <div class="grid">
+    <div class="card">🍜 Fly For It</div>
+    <div class="card">🍕 Worth the Queue</div>
+    <div class="card">❌ Skip It</div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>
+    Bites, Sights & Flights is about knowing when to splurge,
+    when to save, and when to eat on plastic stools at midnight.
+  </p>
+</section>
+
+<footer>
+  © 2026 Bites, Sights & Flights
+</footer>
+
+</body>
+</html>
